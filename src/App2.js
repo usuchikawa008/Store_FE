@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/style.css";
+import "./assets/css/responsive.css";
 import "./App.css";
 
 import AuthService from "./services/auth.service";
@@ -51,7 +53,7 @@ class App2 extends Component {
 
         return (
             <div>
-                <nav className="navbar navbar-expand navbar-dark bg-dark">
+                {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
                     <Link to={"/"} className="navbar-brand">
                         React
                     </Link>
@@ -115,7 +117,7 @@ class App2 extends Component {
                             </li>
                         </div>
                     )}
-                </nav>
+                </nav> */}
 
                 <div className="container mt-3">
                     <Routes>
