@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import HomeBanner from "../../components/HomeBanner";
+import HomeBanner from "../HomeBanner/HomeBanner";
 import CategoryBanner from "../../components/CategoryBanner/CategoryBanner";
 import NewArrivals from "../../components/Products/NewArrivals";
 import BestSeller from "../../components/Products/BestSeller";
-import Benefit from "../../components/Benefit";
-import Advertisement from "../../components/Advertisement";
+import Benefit from "../Benefit/Benefit";
+import Advertisement from "../Advertisement/Advertisement";
 import Product from "models/Product";
 
 export default class Home extends Component {

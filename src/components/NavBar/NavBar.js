@@ -6,9 +6,9 @@
 
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import HomeCartView from "../HomeCartView";
-import MobileMenu from "../MobileMenu";
-import device, { size } from "../../modules/mediaQuery";
+import HomeCartView from "../HomeCartView/HomeCartView";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import device, { size } from "../../modules/mediaQuery/device";
 import MediaQuery from "react-responsive";
 
 class NavBar extends Component {

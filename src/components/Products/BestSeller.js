@@ -6,7 +6,7 @@
 
 import React, { Component } from "react";
 import SingleProduct from "./SingleProduct";
-import Heading from "../Heading";
+import Heading from "../Heading/Heading";
 
 class BestSeller extends Component {
   constructor(props) {

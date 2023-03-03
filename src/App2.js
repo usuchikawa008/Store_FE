@@ -7,13 +7,14 @@ import "./App.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/auth/login.component";
-import Register from "./components/auth/register.component";
-import Profile from "./components/auth/profile.component";
+// import Login from "./components/auth/login.component";
+// import Register from "./components/auth/register.component";
+// import Profile from "./components/auth/profile.component";
 import Home from "./components/board/home.component";
-import BoardUser from "./components/board/board-user.component";
-import BoardModerator from "./components/board/board-moderator.component";
-import BoardAdmin from "./components/board/board-admin.component";
+// import BoardUser from "./components/board/board-user.component";
+// import BoardModerator from "./components/board/board-moderator.component";
+// import BoardAdmin from "./components/board/board-admin.component";
+import Category from "views/Category/Category";
 
 class App2 extends Component {
     constructor(props) {
@@ -49,7 +50,7 @@ class App2 extends Component {
     }
 
     render() {
-        const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
+        // const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
 
         return (
             <div>
@@ -96,23 +97,24 @@ class App2 extends Component {
                                 About
                             </Link>
                         </li>
-                        
+
 
                     </div>
 
 
-                    {currentUser ? (
+                    {/* {currentUser ?  */}
+                    {/* (
                         <div className="navbar-nav ml-auto">
                             <form class="d-flex input-group w-auto">
-                            <input
-                                type="search"
-                                class="form-control rounded"
-                                placeholder="Search"
-                                aria-label="Search"
-                                aria-describedby="search-addon"
-                            />
-                            
-                        </form>
+                                <input
+                                    type="search"
+                                    class="form-control rounded"
+                                    placeholder="Search"
+                                    aria-label="Search"
+                                    aria-describedby="search-addon"
+                                />
+
+                            </form>
                             <li className="nav-item">
                                 <Link to={"/profile"} className="nav-link">
                                     {currentUser.username}
@@ -124,18 +126,19 @@ class App2 extends Component {
                                 </a>
                             </li>
                         </div>
-                    ) : (
+                    ) :  */}
+                    {/* ( */}
                         <div className="navbar-nav ml-auto">
-                            <form class="d-flex input-group w-auto">
-                            <input
-                                type="search"
-                                class="form-control rounded"
-                                placeholder="Search"
-                                aria-label="Search"
-                                aria-describedby="search-addon"
-                            />
-                            
-                        </form>
+                            <form className="d-flex input-group w-auto">
+                                <input
+                                    type="search"
+                                    class="form-control rounded"
+                                    placeholder="Search"
+                                    aria-label="Search"
+                                    aria-describedby="search-addon"
+                                />
+
+                            </form>
                             <li className="nav-item">
                                 <Link to={"/login"} className="nav-link">
                                     Login
@@ -148,19 +151,21 @@ class App2 extends Component {
                                 </Link>
                             </li>
                         </div>
-                    )}
+                    {/* ) */}
+                    {/* } */}
                 </nav>
 
                 <div className="container mt-3">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
+                        {/* <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/user" element={<BoardUser />} />
                         <Route path="/mod" element={<BoardModerator />} />
-                        <Route path="/admin" element={<BoardAdmin />} />
+                        <Route path="/admin" element={<BoardAdmin />} /> */}
+                        <Route path="/products" element={<Category />} />
                     </Routes>
                 </div>
             </div>

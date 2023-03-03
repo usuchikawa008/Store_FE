@@ -7,9 +7,9 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./style.css";
-import Auth from "../../modules/Auth";
+import Auth from "../../modules/Auth/Auth";
 import EmptyCart from "../../assets/images/emptyCart.png";
-import jumpTo from "../../modules/Navigation";
+import jumpTo from "../../modules/Navigation/Navigation";
 class HomeCartView extends Component {
   constructor(props) {
     super(props);

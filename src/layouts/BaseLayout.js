@@ -7,8 +7,8 @@
 import React, { Component } from "react";
 import TopNavBar from "../components/TopNavBar";
 import NavBarContainer from "../components/NavBar/NavBarContainer";
-import MobileMenu from "../components/MobileMenu";
-import Footer from "../components/Footer";
+import MobileMenu from "../components/MobileMenu/MobileMenu";
+import Footer from "../components/Footer/Footer";
 
 class BaseLayout extends Component {
   constructor(props) {

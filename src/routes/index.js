@@ -11,12 +11,12 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import { registerNav } from "../modules/Navigation";
+import { registerNav } from "../modules/Navigation/Navigation";
 import { createBrowserHistory } from "history";
 import PageNotFound from "../views/PageNotFound";
 import HomeRoutes from "./HomeRoutes";
 import PrivateRoutes from "./PrivateRoutes";
-import Auth from "../modules/Auth";
+import Auth from "../modules/Auth/Auth";
 
 const PrivateRouter = ({ component, ...options }) => {
   const finalComponent =

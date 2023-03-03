@@ -6,7 +6,7 @@
 
 import React, { Component } from "react";
 import SingleProduct from "./SingleProduct";
-import Heading from "../Heading";
+import Heading from "../Heading/Heading";
 import PropTypes from "prop-types";
 class NewArrivals extends Component {
   constructor(props) {
