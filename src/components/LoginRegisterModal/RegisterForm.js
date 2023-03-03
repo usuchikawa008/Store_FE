@@ -5,13 +5,13 @@
  */
 
 import React, { Component } from "react";
-import jumpTo from "../../modules/Navigation";
+import jumpTo from "../../modules/Navigation/Navigation";
 import Validator from "../../utils/Validator";
 import { DEFAULT_RULE, EMAIL_RULE } from "../../utils/Validator/rule";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { userRegister } from "../../redux/actions/RegisterAction";
-import LoadingButton from "../LoadingButton";
+// import { userRegister } from "../../redux/actions/RegisterAction";
+import LoadingButton from "../LoadingButton/LoadingButton";
 
 class RegisterForm extends Component {
   constructor(props) {
@@ -42,17 +42,17 @@ class RegisterForm extends Component {
       return;
     }
     this.setState({ loading: true });
-    this.props
-      .userRegister(name, email, password, password)
-      .then(res => {
-        console.log(res);
-        this.props.loginClicked();
-        this.setState({ loading: false });
-      })
-      .catch(error => {
-        console.log(error.response);
-        this.setState({ loading: false });
-      });
+    // this.props
+    //   .userRegister(name, email, password, password)
+    //   .then(res => {
+    //     console.log(res);
+    //     this.props.loginClicked();
+    //     this.setState({ loading: false });
+    //   })
+    //   .catch(error => {
+    //     console.log(error.response);
+    //     this.setState({ loading: false });
+    //   });
   };
 
   render() {
@@ -132,7 +132,7 @@ RegisterForm.propTypes = {
 };
 
 const mapDispatchToProps = {
-  userRegister
+  // userRegister
 };
 const mapStoreToProps = state => ({
   register_loading: state.register.register_loading,

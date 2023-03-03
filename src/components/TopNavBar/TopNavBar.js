@@ -5,9 +5,9 @@
  */
 
 import React, { Component } from "react";
-import LoginRegister from "../LoginRegisterModal";
+import LoginRegister from "../LoginRegisterModal/LoginRegister";
 
-import Auth from "../../modules/Auth";
+import Auth from "../../modules/Auth/Auth";
 
 class TopNavBar extends Component {
   constructor(props) {

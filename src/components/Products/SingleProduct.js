@@ -6,7 +6,7 @@
 
 import Product from "models/Product";
 import React from "react";
-import jumpTo from "../../modules/Navigation";
+import jumpTo from "../../modules/Navigation/Navigation";
 import image1 from "../../assets/images/serum1.png"
 
 

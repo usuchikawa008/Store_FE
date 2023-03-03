@@ -6,12 +6,12 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userLogin } from "../../redux/actions/LoginAction";
-import jumpTo from "../../modules/Navigation";
+// import { userLogin } from "../../redux/actions/LoginAction";
+import jumpTo from "../../modules/Navigation/Navigation";
 import Validator from "../../utils/Validator";
 import { DEFAULT_RULE, EMAIL_RULE } from "../../utils/Validator/rule";
 import PropTypes from "prop-types";
-import LoadingButton from "../LoadingButton";
+import LoadingButton from "../LoadingButton/LoadingButton";
 
 class LoginForm extends Component {
   constructor(props) {
@@ -41,18 +41,18 @@ class LoginForm extends Component {
       return;
     }
     this.setState({ loading: true });
-    this.props
-      .userLogin(email, password)
-      .then(res => {
-        console.log(res);
-        this.setState({ loading: false });
-        window.location.reload();
-      })
-      .catch(error => {
-        // console.log('loginsignin error')
-        console.log(error.response);
-        this.setState({ loading: false });
-      });
+    // this.props
+    //   .userLogin(email, password)
+    //   .then(res => {
+    //     console.log(res);
+    //     this.setState({ loading: false });
+    //     window.location.reload();
+    //   })
+    //   .catch(error => {
+    //     // console.log('loginsignin error')
+    //     console.log(error.response);
+    //     this.setState({ loading: false });
+    //   });
   };
 
   render() {
@@ -125,7 +125,7 @@ LoginForm.propTypes = {
 };
 
 const mapDispatchToProps = {
-  userLogin
+  // userLogin
 };
 const mapStoreToProps = state => ({
   login_loading: state.login.login_loading,
