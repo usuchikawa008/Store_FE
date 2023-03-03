@@ -549,7 +549,7 @@ section {
 .navbar {
   width: auto;
   height: 100px;
-  float: right;
+  float: center;
   padding-left: 0px;
   padding-right: 0px;
 }

@@ -53,18 +53,17 @@ class App2 extends Component {
 
         return (
             <div>
-                {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
-                    <Link to={"/"} className="navbar-brand">
-                        React
-                    </Link>
+                <nav className="navbar navbar-expand navbar-light bg-light text-dark">
+                    <img src={require('./assets/images/logo.png')} />
+
                     <div className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to={"/home"} className="nav-link">
-                                Home
+                            <Link to={"/products"} className="nav-link">
+                                Products
                             </Link>
                         </li>
 
-                        {showModeratorBoard && (
+                        {/* {showModeratorBoard && (
                             <li className="nav-item">
                                 <Link to={"/mod"} className="nav-link">
                                     Moderator Board
@@ -86,11 +85,34 @@ class App2 extends Component {
                                     User
                                 </Link>
                             </li>
-                        )}
+                        )} */}
+                        <li className="nav-item">
+                            <Link to={"/profile"} className="nav-link">
+                                Our story
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to={"/"} className="nav-link">
+                                About
+                            </Link>
+                        </li>
+                        
+
                     </div>
+
 
                     {currentUser ? (
                         <div className="navbar-nav ml-auto">
+                            <form class="d-flex input-group w-auto">
+                            <input
+                                type="search"
+                                class="form-control rounded"
+                                placeholder="Search"
+                                aria-label="Search"
+                                aria-describedby="search-addon"
+                            />
+                            
+                        </form>
                             <li className="nav-item">
                                 <Link to={"/profile"} className="nav-link">
                                     {currentUser.username}
@@ -104,6 +126,16 @@ class App2 extends Component {
                         </div>
                     ) : (
                         <div className="navbar-nav ml-auto">
+                            <form class="d-flex input-group w-auto">
+                            <input
+                                type="search"
+                                class="form-control rounded"
+                                placeholder="Search"
+                                aria-label="Search"
+                                aria-describedby="search-addon"
+                            />
+                            
+                        </form>
                             <li className="nav-item">
                                 <Link to={"/login"} className="nav-link">
                                     Login
@@ -117,7 +149,7 @@ class App2 extends Component {
                             </li>
                         </div>
                     )}
-                </nav> */}
+                </nav>
 
                 <div className="container mt-3">
                     <Routes>
