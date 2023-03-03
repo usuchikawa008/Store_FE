@@ -6,7 +6,9 @@
 
 import React, { Component } from "react";
 
-function CartItem({ items, handleClick }) {
+
+function  CartItem({ items, handleClick }) {
+  console.log("items[id].price: "+ items[0].totalQty)
   return (
     <div style={{ marginTop: 30 }}>
       {items !== undefined &&
@@ -33,14 +35,14 @@ function CartItem({ items, handleClick }) {
                 className="basket--item--quantity"
                 style={{ marginTop: 10, marginBottom: 10 }}
               >
-                Quantity: <span>{items[id].qty}</span>
+                Quantity: <span>{items[id].totalQty}</span>
               </div>
               <div
                 className="basket--item--price"
                 style={{ marginTop: 10, marginBottom: 10 }}
               >
                 {" "}
-                Price: <span>₹{items[id].price}</span>
+                Price: <span> {items[id].item.price}.000 VNĐ</span>
               </div>
             </div>
             <div className="col-sm-5">
@@ -53,7 +55,7 @@ function CartItem({ items, handleClick }) {
                   >
                     <i className="fa fa-minus" aria-hidden="true"></i>
                   </span>
-                  <span id="quantity_value"> {items[id].qty}</span>
+                  <span id="quantity_value"> {items[id].totalQty}</span>
                   <span
                     className="plus"
                     onClick={() => handleClick(id, true, false)}
