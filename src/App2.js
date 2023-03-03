@@ -15,6 +15,7 @@ import Home from "./components/board/home.component";
 // import BoardModerator from "./components/board/board-moderator.component";
 // import BoardAdmin from "./components/board/board-admin.component";
 import Category from "views/Category/Category";
+import Cart from "views/Cart/Cart";
 
 class App2 extends Component {
     constructor(props) {
@@ -166,6 +167,7 @@ class App2 extends Component {
                         <Route path="/mod" element={<BoardModerator />} />
                         <Route path="/admin" element={<BoardAdmin />} /> */}
                         <Route path="/products" element={<Category />} />
+                        <Route path="/carts" element={<Cart />} />
                     </Routes>
                 </div>
             </div>
