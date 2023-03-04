@@ -16,6 +16,7 @@ import Home from "./components/board/home.component";
 // import BoardAdmin from "./components/board/board-admin.component";
 import Category from "views/Category/Category";
 import Cart from "views/Cart/Cart";
+import SingleProduct from "views/Product/SingleProduct";
 
 class App2 extends Component {
     constructor(props) {
@@ -59,6 +60,11 @@ class App2 extends Component {
                     <img src={require('./assets/images/logo.png')} />
 
                     <div className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                            <Link to={"/"} className="nav-link">
+                                Home
+                            </Link>
+                        </li>
                         <li className="nav-item">
                             <Link to={"/products"} className="nav-link">
                                 Products
@@ -168,6 +174,7 @@ class App2 extends Component {
                         <Route path="/admin" element={<BoardAdmin />} /> */}
                         <Route path="/products" element={<Category />} />
                         <Route path="/carts" element={<Cart />} />
+                        <Route path="/product/id" element={<SingleProduct />} />
                     </Routes>
                 </div>
             </div>

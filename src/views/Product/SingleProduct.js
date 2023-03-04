@@ -4,6 +4,8 @@
  ** Github URL: https://github.com/quintuslabs/fashion-cube
  */
 
+import Product from "models/Product";
+import Variant from "models/Variant";
 import React, { Component } from "react";
 import LoginRegister from "../../components/LoginRegisterModal/LoginRegister";
 import Auth from "../../modules/Auth/Auth";
@@ -21,12 +23,23 @@ class SingleProduct extends Component {
       modalShow: false,
       login: true,
     };
+    this.product = new Product(1, '', 'https://aladin.com.vn/media/product/3467_image_skincare_vital_c_antioxidant_hydrating_ace_serum_new2018.png', "BHA Silkygirl 55ml Gentle Eye & Lip", 499.000);
+   this.variants = [
+    new Variant(1, 'https://suckhoesacdep.vn/LegowebFile/Image/sac-dep/image-skincare-vital-c-hydrating-antioxidant-ace-serum2(1).jpg',
+    'red', 38, 4, 'BHA Silkygirl 55ml Gentle Eye & Lip', 499.000),
+    new Variant(1, 'https://imageskincare.vn/wp-content/uploads/2020/10/VITAL-C-hydrating-antioxidant-ACE-serum-05.jpg',
+    'red', 38, 4, 'BHA Silkygirl 55ml Gentle Eye & Lip', 499.000),
+    new Variant(1, 'https://tinhtebeauty.com/wp-content/uploads/2020/10/22-27.jpg',
+    'red', 38, 4, 'BHA Silkygirl 55ml Gentle Eye & Lip', 499.000),
+    new Variant(1, 'https://drlamdep.com/wp-content/uploads/2021/09/Image-Vital-C-Hydrating-ACE-Serum-30ml.jpg',
+    'red', 38, 4, 'BHA Silkygirl 55ml Gentle Eye & Lip', 499.000),
+   ]
   }
   componentDidMount() {
-    this.props.getProduct(this.props.location.pathname.split("/").slice(-1)[0]);
-    this.props.getVariantsByProductId(
-      this.props.location.pathname.split("/").slice(-1)[0]
-    );
+    // this.props.getProduct(this.props.location.pathname.split("/").slice(-1)[0]);
+    // this.props.getVariantsByProductId(
+    //   this.props.location.pathname.split("/").slice(-1)[0]
+    // );
   }
 
   showHideModal = () => {
@@ -112,9 +125,9 @@ class SingleProduct extends Component {
     console.log(this.props);
     return (
       <div className="container single_product_container">
-        {this.props.product && (
+        {this.product && (
           <div>
-            <div className="row">
+            {/* <div className="row">
               <div className="col">
                 <div className="breadcrumbs d-flex flex-row align-items-center">
                   <ul>
@@ -124,19 +137,19 @@ class SingleProduct extends Component {
                     <li>
                       <a href="#">
                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                        {this.props.product.department}
+                        {this.product.department}
                       </a>
                     </li>
                     <li className="active">
                       <a href="#">
                         <i className="fa fa-angle-right" aria-hidden="true"></i>
-                        {this.props.product.category}
+                        {this.product.category}
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="row">
               <div className="col-lg-7">
@@ -145,8 +158,8 @@ class SingleProduct extends Component {
                     <div className="col-lg-3 thumbnails_col order-lg-1 order-2">
                       <div className="single_product_thumbnails">
                         <ul>
-                          {this.props.variants &&
-                            this.props.variants
+                          {this.variants &&
+                            this.variants
                               .slice(0, 4)
                               .map((item, index) => (
                                 <li
@@ -171,7 +184,7 @@ class SingleProduct extends Component {
                           className="single_product_image_background"
                           style={{
                             backgroundImage: `url(${
-                              this.state.pic || this.props.product.imagePath
+                              this.state.pic || this.product.imagePath
                             })`,
                           }}
                         />
@@ -183,8 +196,8 @@ class SingleProduct extends Component {
               <div className="col-lg-5">
                 <div className="product_details">
                   <div className="product_details_title">
-                    <h2>{this.props.product.title}</h2>
-                    <p>{this.props.product.description}</p>
+                    <h2>{this.product.title}</h2>
+                    <p>{this.product.description}</p>
                   </div>
                   <div className="free_delivery d-flex flex-row align-items-center justify-content-center">
                     <span>
@@ -194,10 +207,10 @@ class SingleProduct extends Component {
                   </div>
                   <div className="original_price">
                     {" "}
-                    ₹ {(parseFloat(this.props.product.price) + 30).toFixed(2)}
+                    {(parseFloat(this.product.price) + 30).toFixed(2)} VNĐ
                   </div>
                   <div className="product_price">
-                    ₹ {this.props.product.price}
+                    {(parseFloat(this.product.price)).toFixed(2)} VNĐ
                   </div>
                   <ul className="star_rating">
                     <li>
@@ -268,13 +281,13 @@ class SingleProduct extends Component {
           </div>
         )}
 
-        <LoginRegister
+        {/* <LoginRegister
           show={this.state.modalShow}
           login={this.state.login}
           registerClicked={() => this.registerClicked()}
           loginClicked={() => this.loginClicked()}
           onHide={() => this.showHideModal()}
-        />
+        /> */}
       </div>
     );
   }
