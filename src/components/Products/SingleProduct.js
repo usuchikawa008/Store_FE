@@ -8,10 +8,17 @@ import Product from "models/Product";
 import React from "react";
 import jumpTo from "../../modules/Navigation/Navigation";
 import image1 from "../../assets/images/serum1.png"
+import { useNavigate } from "react-router-dom";
+
 
 
 function SingleProduct(props) {
   const { productItem } = props;
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/product/id");
+  }
   
   // var productItem = new Product(1, 'Áo Sơ mi', 'https://aladin.com.vn/media/product/3467_image_skincare_vital_c_antioxidant_hydrating_ace_serum_new2018.png', "Serum1", 123.000)
 
@@ -19,9 +26,7 @@ function SingleProduct(props) {
     <div className="product-item men">
       <div
         className="product discount product_filter"
-        onClick={() =>
-          jumpTo(`/fashion-cube/single-product/${productItem._id}`)
-        }
+        onClick={handleClick}
       >
         <div className="product_image">
           <img src={productItem.imagePath} alt="" className="img-fluid" />
