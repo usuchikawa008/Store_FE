@@ -1,0 +1,119 @@
+openapi: 3.0.0
+info:
+  title: User Profile API
+  description: API for managing user profiles
+  version: 1.0.0
+servers:
+  - url: https://65117dd2829fa0248e403369.mockapi.io/api/v1
+paths:
+  /profile:
+    get:
+      summary: Get a list of user profiles
+      operationId: getProfiles
+      parameters:
+        - name: dob
+          in: query
+          description: Filter profiles by date of birth (DOB)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - createdAt: '2023-09-25T06:33:25.318Z'
+                  name: Craig.Osinski
+                  dob: '1963-05-30T05:10:42.423Z'
+                  id: '1'
+    post:
+      summary: Create a new user profile
+      operationId: createProfile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                dob:
+                  type: string
+              required:
+                - name
+                - dob
+      responses:
+        '201':
+          description: Profile created successfully
+          content:
+            application/json:
+              example:
+                createdAt: '2023-09-25T06:33:25.318Z'
+                name: Craig.Osinski
+                dob: '1963-05-30T05:10:42.423Z'
+                id: '1'
+
+  '/profile/{id}':
+    get:
+      summary: Get a user profile by ID
+      operationId: getProfileById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                createdAt: '2023-09-25T06:33:25.318Z'
+                name: Craig.Osinski
+                dob: '1963-05-30T05:10:42.423Z'
+                id: '1'
+    put:
+      summary: Update a user profile by ID
+      operationId: updateProfileById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                dob:
+                  type: string
+              required:
+                - name
+                - dob
+      responses:
+        '200':
+          description: Profile updated successfully
+          content:
+            application/json:
+              example:
+                createdAt: '2023-09-25T06:33:25.318Z'
+                name: UpdatedName
+                dob: '1963-05-30T05:10:42.423Z'
+                id: '1'
+    delete:
+      summary: Delete a user profile by ID
+      operationId: deleteProfileById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Profile deleted successfully
